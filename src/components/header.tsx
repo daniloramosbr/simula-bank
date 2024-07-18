@@ -47,11 +47,11 @@ export default function Header() {
   return (
     <div className="cont-header dark:bg-dark-bg" id="section1"> 
       <h1>
-      <Link href={"/home"}><ion-icon name="wallet-outline"></ion-icon> SIMULA BANK</Link>
+      <Link href={"/"}><ion-icon name="wallet-outline"></ion-icon> SIMULA BANK</Link>
         
       </h1>
       <div className="cont-link">
-        <Link href={"/home"}>Home</Link>
+        <Link href={"/"}>Home</Link>
         <Link href={"#"}>Sobre Nós</Link>
         <Link href={"#"}>Contate-nos</Link>
       </div>
@@ -66,7 +66,7 @@ export default function Header() {
         <ion-icon size='large' name="person-circle-outline"></ion-icon>
         </Tooltip>
        {decode &&  <Tooltip content="Sair">
-          <Link href={"/home"} onClick={CleanCookie}>
+          <Link href={"/"} onClick={CleanCookie}>
           <ion-icon size='large' name="exit-outline"></ion-icon>
           </Link>
         </Tooltip>}
@@ -74,5 +74,5 @@ export default function Header() {
     </div>
       </div>
     </div>
-  );
+  )
 }
