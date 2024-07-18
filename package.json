@@ -1,0 +1,41 @@
+{
+  "name": "banco-virtual",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@nextui-org/react": "^2.4.2",
+    "@react-oauth/google": "^0.12.1",
+    "@types/js-cookie": "^3.0.6",
+    "axios": "^1.7.2",
+    "dotenv": "^16.4.5",
+    "framer-motion": "^11.2.10",
+    "js-cookie": "^3.0.5",
+    "jwt-decode": "^4.0.0",
+    "moonicon": "^0.0.2",
+    "next": "14.2.4",
+    "next-themes": "^0.3.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-scroll": "^1.9.0",
+    "recharts": "^2.12.7",
+    "sass": "^1.77.6",
+    "tailwindcss": "^3.4.4",
+    "victory": "^37.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.9",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@types/react-scroll": "^1.8.10",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.4",
+    "postcss": "^8",
+    "typescript": "^5"
+  }
+}
