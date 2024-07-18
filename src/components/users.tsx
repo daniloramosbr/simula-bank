@@ -3,7 +3,7 @@ import { Input, Button } from "@nextui-org/react";
 import { useState } from "react";
 import Cookies from "js-cookie";
 import { jwtDecode } from "jwt-decode";
-import ApiController from "@/controllers/ApiController";
+import { apiController } from "@/controllers/ApiController";
 import { useContext } from "react";
 import { ContextJsx } from "@/context/context";
 
@@ -69,9 +69,8 @@ export default function Users({sucess, id, name}: PropsData ) {
    
     try {
       setLoading(true)
-     const res = await ApiController.sendValor(decode.id, id, dataForm.valor)
+     const res = await apiController.sendValor(decode.id, id, dataForm.valor)
      setUpdate(res?.data)
-     console.log(res)
      sucess(true)
       
     } catch (error) {

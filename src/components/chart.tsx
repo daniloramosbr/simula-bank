@@ -10,11 +10,12 @@ export default function Chart() {
     { x: 3, y: 2000 },
   ]);
 
-  const {myvalor} = useContext(ContextJsx)
+  const {myvalor} = useContext(ContextJsx)         //valor do user
+  
   useEffect(()=>{
 
 
-    const handleDataChange = () => {
+    const handleDataChange = () => {          //atualiza grafico
 
       const novoPonto = { x: data.length + 1, y: myvalor };
       setData([...data, novoPonto]);
@@ -22,7 +23,7 @@ export default function Chart() {
 
     handleDataChange()
 
-  },[myvalor])
+  },[myvalor, data])
 
   return (
     <div className="cont-chart">
@@ -32,7 +33,7 @@ export default function Chart() {
           <VictoryLine
             data={data}
             style={{
-              data: { stroke: "rgb(98, 0, 255)" }, // Altere a cor da linha aqui
+              data: { stroke: "rgb(98, 0, 255)" }
             }}
           />
           <VictoryAxis tickFormat={() => ""}/>

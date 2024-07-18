@@ -32,7 +32,7 @@ export default function Header() {
 
     setMounted(true)
 
-  }, [isChecked])
+  }, [isChecked, setTheme])
 
   if(!mounted) return null
 

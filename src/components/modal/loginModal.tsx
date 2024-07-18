@@ -3,10 +3,11 @@ import {Modal,ModalContent,ModalHeader,ModalBody,ModalFooter,Button,useDisclosur
 import { useState } from "react";
 import { GoogleLogin } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
-import ApiController from "@/controllers/ApiController";
+import { apiController } from "@/controllers/ApiController";
 import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
 import { useEffect } from "react";
+import { useCallback } from "react";
 
 declare global {
   namespace JSX {
@@ -63,20 +64,12 @@ export default function LoginModal() {
       password: "",
     });
   };
+  const CreateLogin = useCallback(async () => {
 
-  useEffect(() => {          //so ativa a criaçao depois que atualizar o dataform 
-
-    if (data.name && data.email) {
-      CreateLogin();
-    }
-
-  }, [dataForm]);
-
- const CreateLogin = async () => {
     setData({})
     try {
       setLoading(true);
-      const res: any = await ApiController.createLogin(
+      const res: any = await apiController.createLogin(
         dataForm.name,
         dataForm.email,
         dataForm.password
@@ -89,9 +82,17 @@ export default function LoginModal() {
       console.log(error)
     }
     setLoading(false);
-  }
+  }, [dataForm.name, dataForm.email, dataForm.password, router]);
+  
+  useEffect(() => {          //so ativa a criaçao depois que atualizar o dataform 
 
-  const ValidLogin = async () => {
+    if (data.name && data.email) {
+      CreateLogin();
+    }
+
+  }, [dataForm, data.name, data.email,CreateLogin]);
+
+  const ValidLogin = async () => {         //valida o login
 
     if (!dataForm.email || !dataForm.password) {
 
@@ -108,7 +109,7 @@ export default function LoginModal() {
 
     try {
       setLoading(true);
-      const res: any = await ApiController.validLogin(
+      const res: any = await apiController.validLogin(
         dataForm.email,
         dataForm.password
       )
@@ -136,7 +137,7 @@ export default function LoginModal() {
 try {
 
   setLoading(true);
-  const res: any = await ApiController.googleValid(
+  const res: any = await apiController.googleValid(
     email
   )
    Cookies.set('user', res.data.data)                         //salva token no cookie    

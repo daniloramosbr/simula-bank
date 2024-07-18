@@ -5,6 +5,7 @@ import {User} from "@nextui-org/react";
 import Footer from "@/components/footer";
 import { Link, animateScroll as scroll } from "react-scroll";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export default function Home() {
 
@@ -29,32 +30,32 @@ export default function Home() {
        </div>
         </div>
         <div className="cont-img">
-        <img  src="cartoon-business.png" alt="cartoon"/>
+        <Image  src="cartoon-business.png" alt="cartoon"/>
         </div>
       </div>
       <div className="cont-card dark:bg-dark-bg">
         <div className="card-1 dark:bg-dark-bg">
-      <img src="money.png" alt="money"/>
+      <Image src="money.png" alt="money"/>
       <h3>Financeiro</h3>
       <p>cuida do seu financeiro</p>
         </div>
         <div className="card-2 dark:bg-dark-bg">
-        <img src="dart.png" alt="dart"/>
+        <Image src="dart.png" alt="dart"/>
       <h3>Negócios</h3>
       <p>cuida do seus negócios</p>
         </div>
         <div className="card-3 dark:bg-dark-bg">
-        <img src="take-money.png" alt="take"/>
+        <Image src="take-money.png" alt="take"/>
       <h3>Bancos e Serviços</h3>
       <p>bancos e serviços bancários</p>
         </div>
         <div className="card-4 dark:bg-dark-bg">
-        <img src="seg.png" alt="take"/>
+        <Image src="seg.png" alt="take"/>
       <h3>Seguro</h3>
       <p>criamos seu seguro</p>
         </div>
         <div className="card-5 dark:bg-dark-bg">
-        <img src="world.png" alt="take"/>
+        <Image src="world.png" alt="take"/>
       <h3>Investimento e Negociações</h3>
       <p>investimentos para você</p>
         </div>

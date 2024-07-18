@@ -103,4 +103,4 @@ class ApiController {
   }
 }
 
-export default new ApiController()
+export const apiController = new ApiController()

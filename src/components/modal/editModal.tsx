@@ -2,7 +2,7 @@ import {Modal,ModalContent,ModalHeader,ModalBody,ModalFooter,Button,useDisclosur
 import Cookies from "js-cookie";
 import { jwtDecode } from "jwt-decode";
 import { useContext, useState } from "react";
-import ApiController from "@/controllers/ApiController";
+import { apiController } from "@/controllers/ApiController";
 import { ContextJsx } from "@/context/context";
 
 interface UserData {
@@ -59,7 +59,7 @@ export default function EditModal() {
     setLoading(true)
     try {
 
-     const res:any = await ApiController.editValor(decode.id, dataForm.valor)
+     const res:any = await apiController.editValor(decode.id, dataForm.valor)
       setUpdate(res.data)
       limparDados()
     } catch (error) {

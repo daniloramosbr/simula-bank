@@ -8,7 +8,7 @@ import Cookies from "js-cookie";
 import { jwtDecode } from "jwt-decode";
 import { useEffect, useState } from "react";
 import { Spinner } from "@nextui-org/react";
-import ApiController from "@/controllers/ApiController";
+import { apiController } from "@/controllers/ApiController";
 import { useContext } from "react";
 import { ContextJsx } from "@/context/context";
 
@@ -57,7 +57,7 @@ export default function Dashboard() {
     setLoading(true)
     try {
 
-      const res: any = await ApiController.myValor(decode.id)
+      const res: any = await apiController.myValor(decode.id)
       setData(res.data.data)
     } catch (error) {
       console.error(error)
@@ -69,7 +69,7 @@ export default function Dashboard() {
     setLoading(true)
     try {
 
-      const res: any = await ApiController.transaction()
+      const res: any = await apiController.transaction()
      setTransac(res.data)
       
     } catch (error) {
@@ -81,7 +81,7 @@ export default function Dashboard() {
   getMyvalor()
   getTransactions()
 
-  },[update])
+  },[update,decode])
 
   return (
     <main className="cont-main">

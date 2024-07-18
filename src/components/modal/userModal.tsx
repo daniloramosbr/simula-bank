@@ -3,7 +3,7 @@ import Users from "../users";
 import { useState, useEffect} from "react";
 import Cookies from "js-cookie";
 import { jwtDecode } from "jwt-decode";
-import ApiController from "@/controllers/ApiController";
+import { apiController } from "@/controllers/ApiController";
 
 export default function UserModal() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure(); //modal
@@ -35,7 +35,7 @@ export default function UserModal() {
     async function getUsers() {
       setLoading(true);
       try {
-        const res: any = await ApiController.allUsers(decode ? decode.id : 'guest')
+        const res: any = await apiController.allUsers(decode ? decode.id : 'guest')
         setData(res.data.data);
       } catch (error) {
         console.error(error);
@@ -43,7 +43,7 @@ export default function UserModal() {
       setLoading(false);
     }
     getUsers();
-  }, [isOpen]);
+  }, [isOpen, decode]);
 
   return (
     <>
@@ -68,6 +68,7 @@ export default function UserModal() {
                     : 
                       data.map((res: any) => (
                         <Users
+                        key={res.id}
                           id={res.id}
                           name={res.name}
                           sucess={handleChildData}
