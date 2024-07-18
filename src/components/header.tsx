@@ -5,11 +5,8 @@ import { useContext, useEffect, useState } from "react";
 import Cookies from 'js-cookie';
 import { jwtDecode } from "jwt-decode";
 import { ContextJsx } from "@/context/context";
-import { useRouter } from "next/navigation";
 
 export default function Header() {
-
-  const router = useRouter()
 
   const [isChecked, setIsChecked] = useState((Cookies.get('userTheme') === 'true'))    //inicia com o valor que tem no cookie,se n existir da false
 
@@ -47,11 +44,11 @@ export default function Header() {
   return (
     <div className="cont-header dark:bg-dark-bg" id="section1"> 
       <h1>
-      <Link href={"/"}><ion-icon name="wallet-outline"></ion-icon> SIMULA BANK</Link>
+      <Link href="/"><ion-icon name="wallet-outline"></ion-icon> SIMULA BANK</Link>
         
       </h1>
       <div className="cont-link">
-        <Link href={"/"}>Home</Link>
+        <Link href="/">Home</Link>
         <Link href={"#"}>Sobre Nós</Link>
         <Link href={"#"}>Contate-nos</Link>
       </div>
@@ -66,7 +63,7 @@ export default function Header() {
         <ion-icon size='large' name="person-circle-outline"></ion-icon>
         </Tooltip>
        {decode &&  <Tooltip content="Sair">
-          <Link href={"/"} onClick={CleanCookie}>
+          <Link href="/" onClick={CleanCookie}>
           <ion-icon size='large' name="exit-outline"></ion-icon>
           </Link>
         </Tooltip>}
