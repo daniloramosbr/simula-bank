@@ -30,7 +30,7 @@ export default function Home() {
        </div>
         </div>
         <div className="cont-img">
-        <Image  src="cartoon-business.png" alt="cartoon"/>
+        <Image src="cartoon-business.png" alt="cartoon"/>
         </div>
       </div>
       <div className="cont-card dark:bg-dark-bg">
