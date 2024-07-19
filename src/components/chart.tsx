@@ -23,7 +23,7 @@ export default function Chart() {
 
     handleDataChange()
 
-  },[myvalor, data])
+  },[myvalor])
 
   return (
     <div className="cont-chart">

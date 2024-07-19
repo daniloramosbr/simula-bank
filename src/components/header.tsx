@@ -32,7 +32,7 @@ export default function Header() {
 
     setMounted(true)
 
-  }, [isChecked, setTheme])
+  }, [isChecked])
 
   if(!mounted) return null
 
@@ -44,11 +44,10 @@ export default function Header() {
   return (
     <div className="cont-header dark:bg-dark-bg" id="section1"> 
       <h1>
-      <Link href="/"><ion-icon name="wallet-outline"></ion-icon> SIMULA BANK</Link>
-        
+      <Link href={"/"}><ion-icon name="wallet-outline"></ion-icon> SIMULA BANK</Link>
       </h1>
       <div className="cont-link">
-        <Link href="/">Home</Link>
+        <Link href={"/"}>Home</Link>
         <Link href={"#"}>Sobre Nós</Link>
         <Link href={"#"}>Contate-nos</Link>
       </div>
@@ -71,5 +70,5 @@ export default function Header() {
     </div>
       </div>
     </div>
-  )
+  );
 }

@@ -43,7 +43,7 @@ export default function UserModal() {
       setLoading(false);
     }
     getUsers();
-  }, [isOpen, decode]);
+  }, [isOpen]);
 
   return (
     <>
