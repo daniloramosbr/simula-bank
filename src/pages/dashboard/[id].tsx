@@ -100,7 +100,7 @@ export default function Dashboard() {
         </div>
         <div className="cont-tr">
           <h1>TRANSAÇÕES:</h1>
-        {loading ? <Spinner/> : transac.map((res: any)=>
+        {loading ? <Spinner color="secondary" /> : transac.map((res: any)=>
         (
           <Transaction
             key={res.id}
