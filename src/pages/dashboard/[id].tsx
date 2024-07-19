@@ -81,7 +81,7 @@ export default function Dashboard() {
   getMyvalor()
   getTransactions()
 
-  },[update,decode])
+  },[update])
 
   return (
     <main className="cont-main">
