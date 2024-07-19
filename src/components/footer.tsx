@@ -1,10 +1,8 @@
 import React from "react";
-import Link from "next/link";
 
 export default function Footer() {
   return (
     <footer className="footer">
- <Link href="/dashboard/1">PAGINA 2</Link>
      <main className="cont-info dark:bg-dark-bg"> 
      <div>
         <h1>INFORMAÇÃO</h1>

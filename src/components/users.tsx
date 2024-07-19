@@ -107,7 +107,7 @@ export default function Users({sucess, id, name}: PropsData ) {
         type="number"
         label="INSIRA UM VALOR"
         size="sm"/>
-        {loading && <Spinner/>}
+        {loading && <Spinner color="secondary"/>}
         {empty && <div style={{
            color:'#FF0000',
            textAlign: 'center'
